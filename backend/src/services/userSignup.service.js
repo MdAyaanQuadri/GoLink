@@ -1,20 +1,20 @@
 import { userModel } from "../models/user.model.js";
 import {  hashedPassword } from "../utils/hash.utils.js";
 import { jwtSign } from "../utils/jwt.utils.js";
-import { AppError } from "../error.js";
- const userSignupService = async ({name,email,password})=>{
+    const userSignupService = async ({userName,email,password})=>{
     const userExists = await userModel.findOne({email});
     if(userExists){
-        throw new AppError("user already exists",409)
+        throw new Error("user already exists")
     }
     const hashPassword = await hashedPassword(password)
     const response = await userModel.create({
-        name,
+        userName,
         email,
         password: hashPassword
     });
     const id = response._id
-    const token = jwtSign(id);
+    const userId = id.toString();
+    const token = jwtSign(userId);    
     return token;
 }
 export default userSignupService
