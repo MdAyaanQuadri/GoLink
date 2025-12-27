@@ -1,7 +1,7 @@
 import z from "zod"
 const userSignupSchema = z.object(
     {
-        userName:z
+        username:z
         .string()
         .min(3,"username must be at least 3 charecters")
         .max(10,"username is too long")

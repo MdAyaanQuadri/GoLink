@@ -3,7 +3,7 @@ import { email } from "zod";
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
 const user = new Schema({
-    userName:{
+    username:{
         type:String,
         require:true,
     },

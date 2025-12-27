@@ -1,8 +1,20 @@
-// errors/appError.js
+// errors/AppError.js
+// ai made
 export class AppError extends Error {
-  constructor(message, statusCode) {
+  constructor({
+    message,
+    statusCode,
+    errorCode,
+    details = null
+  }) {
     super(message);
-    this.statusCode = statusCode; // e.g. 401, 409
-    this.isOperational = true;    // expected error
+
+    this.statusCode = statusCode;
+    this.errorCode = errorCode;
+    this.details = details;
+
+    this.isOperational = true;
+
+    Error.captureStackTrace(this, this.constructor);
   }
 }
