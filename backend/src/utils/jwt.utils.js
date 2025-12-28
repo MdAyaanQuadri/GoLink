@@ -28,6 +28,10 @@ export const jwtVerify = (token) => {
         }
 
         // fallback (rare)
-        throw err;
+        throw new AppError({
+            message: "Authentication failed",
+            statusCode: 401,
+            errorCode: "AUTH_FAILED"
+        });
     }
 }

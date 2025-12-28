@@ -4,7 +4,7 @@ const userLoginSchema = z.object({
     email:z
     .email("Invalid email address")
     .transform((val)=> val.toLowerCase()),
-    Password:z.string()
+    password:z.string()
 })
 
 export default userLoginSchema;

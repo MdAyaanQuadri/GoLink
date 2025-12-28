@@ -1,8 +1,34 @@
 import express from "express"
 const app = express();
-import userAuthRouter from "./routes/userAuth.router.js"
+import userAuthRouter from "./routes/userRoutes/userAuth.routes.js"
+import userRouter from "./routes/userRoutes/user.routes.js";
+
+
 app.use(express.json());
+
 app.use("/api/users",userAuthRouter);
+app.use("/api/users",userRouter)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.get("/",async (req,res)=>{
     res.send("api is running!!");
 })
