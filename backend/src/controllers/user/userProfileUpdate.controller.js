@@ -1,6 +1,6 @@
-import { AppError } from "../error.js";
-import userUpdateService from "../services/userUpdate.service.js";
-import userProfileUpdateSchema from "../validation/userProfileUpdate.validation.js";
+import { AppError } from "../../error.js";
+import userUpdateService from "../../services/userUpdate.service.js";
+import userProfileUpdateSchema from "../../validation/userProfileUpdate.validation.js";
 const userProfileUpdateController = async(req,res,next) => {
         try{const user = req.user;
         const {data,success,error} = await userProfileUpdateSchema.safeParse(req.body);

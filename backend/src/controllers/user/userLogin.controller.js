@@ -1,6 +1,6 @@
-import userLoginSchema from "../validation/userLogin.validation.js"
-import { AppError } from "../error.js";
-import userLoginService from "../services/userLogin.service.js";
+import userLoginSchema from "../../validation/userLogin.validation.js"
+import { AppError } from "../../error.js";
+import userLoginService from "../../services/userLogin.service.js";
 const userLoginController = async (req,res,next)=>{
     try{
     const {data,success,error} = userLoginSchema.safeParse(req.body);

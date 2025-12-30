@@ -2,13 +2,15 @@ import express from "express"
 const app = express();
 import userAuthRouter from "./routes/userRoutes/userAuth.routes.js"
 import userRouter from "./routes/userRoutes/user.routes.js";
-
-
+import urlShortnerRoutes from "./routes/urlRoutes/urlShortner.routes.js"
+import redirectUrlRoutes from "./routes/urlRoutes/redirectUrl.routes.js"
 app.use(express.json());
 
 app.use("/api/users",userAuthRouter);
 app.use("/api/users",userRouter)
+app.use("",redirectUrlRoutes);
 
+app.use("/api/url/",urlShortnerRoutes);
 
 
 

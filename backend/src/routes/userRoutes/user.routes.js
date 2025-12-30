@@ -1,7 +1,7 @@
 import { Router } from "express";
 import userAuthMiddleware from "../../middlewares/userAuth.middleware.js";
-import userDetailsController from "../../controllers/userDetails.controller.js";
-import userProfileUpdateController from  "../../controllers/userProfileUpdate.controller.js"
+import userDetailsController from "../../controllers/user/userDetails.controller.js";
+import userProfileUpdateController from  "../../controllers/user/userProfileUpdate.controller.js"
 const userRouter = Router();
 
 userRouter.use(userAuthMiddleware);

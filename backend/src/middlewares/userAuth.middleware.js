@@ -6,7 +6,6 @@ import { email } from "zod";
 const userAuthMiddleware = async (req, res, next) => {
     try {
         const authHeader = req.headers.authorization;
-
         if (!authHeader || !authHeader.startsWith("Bearer ")) {
             throw new AppError({
                 statusCode: 401,

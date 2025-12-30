@@ -1,6 +1,6 @@
-import userSignupSchema from "../validation/userSignup.validation.js";
-import userSignupService from "../services/userSignup.service.js";
-import { AppError } from "../error.js";
+import userSignupSchema from "../../validation/userSignup.validation.js";
+import userSignupService from "../../services/userSignup.service.js";
+import { AppError } from "../../error.js";
 const userSignupController = async (req,res,next)=>{
     try{
         // checking if that the request fulfilled the userSignup Schema
